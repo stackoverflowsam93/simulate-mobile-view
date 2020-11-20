@@ -1,25 +1,22 @@
-import logo from './logo.svg';
+import '../node_modules/bootstrap/scss/bootstrap.scss';
+import SymmetricalDiv from './SymmetricalDiv';
+import svgLogo from './SVG_logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
+      <SymmetricalDiv className='rounded-circle d-flex flex-column align-items-center bg-danger'>
+          <strong >A title</strong>
+          <span>A description</span>
+          <img className='my-3' src={svgLogo} />
+          <a href="#">A Link</a>
+      </SymmetricalDiv>
       </header>
     </div>
   );
-}
+};
 
 export default App;
