@@ -1,21 +1,19 @@
 import '../node_modules/bootstrap/scss/bootstrap.scss';
-import SymmetricalDiv from './SymmetricalDiv';
-import svgLogo from './SVG_logo.svg';
-import './App.css';
+import './styles/App.css';
+
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import Main from './pages/Main';
+import Other from './pages/Other';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-
-      <SymmetricalDiv className='rounded-circle d-flex flex-column align-items-center bg-danger'>
-          <strong >A title</strong>
-          <span>A description</span>
-          <img className='my-3' src={svgLogo} />
-          <a href="#">A Link</a>
-      </SymmetricalDiv>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route path={'/'} exact component={Main} />
+        <Route path={'/other'} exact component={Other} />
+      </Switch>
+    </Router>
   );
 };
 

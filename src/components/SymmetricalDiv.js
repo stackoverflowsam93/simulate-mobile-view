@@ -1,9 +1,8 @@
 import React, {useState, useEffect, useRef} from 'react';
     
-const SymmetricalDiv = ({style, children, ...props}) => {
+const SymmetricalDiv = ({children, ...props}) => {
     const [diamStyle, setDiamStyle] = useState({});
     const elementRef = useRef(null);
-    style = style ? Object.assign({}, diamStyle, style) : diamStyle ;
 
     useEffect(() => {
         const width = elementRef.current.clientWidth;
@@ -13,7 +12,7 @@ const SymmetricalDiv = ({style, children, ...props}) => {
     }, []);
 
     return (
-        <div ref={elementRef} {...props} style={style}>
+        <div ref={elementRef} {...props} style={diamStyle}>
             {children}
         </div>
     );
